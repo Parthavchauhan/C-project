@@ -12,20 +12,22 @@ void hexadecimalTodecimal(char hexadecimal[100], int size, int hexadecimal_orig[
 int main()
 {
     system("color E0");   //E for light yellow and 0 black of font;
-    printf("\n\n\t\t\t***Welcome to Base Converter Calculator***\n\n");
+    printf("\n\n\t\t\t\t\t    ***Welcome to Base Converter Calculator***\n");
+    printf("\t\t\t\t\t    __________________________________________\n\n\n");
     int select;
     // Project of c!
     
     while (1)
     {
         label1:
+        printf("\t\t ----------------------------------------------------------------------------------------------------\n");
+        printf("\t\t|\t\t\t-> Enter the Number to select the base conversion                            |\n\t\t|                                                                                                    |\n");
+        printf("\t\t|\t1.) Decimal to Binary\t\t2.) Binary to decimal\t\t3.)Decimal to Octal          |\n");
+        printf("\t\t|\t4.) Binary to Hexadecimal\t5.) Octal to Decimal\t\t6.)Hexadecimal to Binary     |\n");
+        printf("\t\t|\t\t\t\t\t7.)Exit                                                      |\n");
+        printf("\t\t ----------------------------------------------------------------------------------------------------\n\n");
 
-        printf("-> Enter the Number to select the base conversion\n\n");
-        printf("1.) Decimal to Binary\t\t2.) Binary to decimal\t\t3.)Decimal to Octal\n");
-        printf("4.) Binary to Hexadecimal\t5.) Octal to Decimal\t\t6.)Hexadecimal to Binary\n");
-        printf("\t\t\t\t7.)Exit\n\n");
-
-        printf("-->Enter Your Choice: ");
+        printf("\t\t-->Enter Your Choice: ");
         scanf("%d", &select);
 
         if (select >= 1 && select <= 6)
@@ -34,7 +36,7 @@ int main()
         }
         else if (select == 7)
         {
-            printf("\n\t\t\t***Thank's for using our calculator***\n");
+            printf("\n\t\t\t\t            ***Thank's for using our calculator***\n\n\n");
             return 0;
         }
         else
@@ -62,13 +64,13 @@ int main()
 
         decimalTobinary(size, binary, origanl_num1);
 
-        printf("--------------\n");
+        printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
         printf("[%d] to binary = ", origanl_num1);
         for (int i = size - 1; i >= 0; i--)
         {
             printf("%d", binary[i]);
         }
-        printf("\n--------------\n");
+        printf("\n__________________________________________________________________________________________________________________________________________________\n");
         printf("\n\n");
 
         goto label1;
@@ -80,9 +82,10 @@ int main()
         printf("Enter the Binary number: ");
         scanf("%d", &num2);
         ans2 = binaryTodecimal(num2);
-        printf("----------------------\n");
-        printf("[%d] to Decimal = %d\n", num2, ans2);
-        printf("----------------------\n\n");
+        printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
+        printf("[%d] to Decimal = %d", num2, ans2);
+        printf("\n__________________________________________________________________________________________________________________________________________________\n");
+        printf("\n\n");
         goto label1;
     }
     else if (select == 3)
@@ -100,13 +103,14 @@ int main()
         }
         int octal[size];
         decimalTooctal(size, octal, orignal_num2);
-        printf("--------------\n");
+        printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
         printf("[%d] to octal is = ", orignal_num2);
         for (int i = size - 1; i >= 0; i--)
         {
             printf("%d", octal[i]);
         }
-        printf("\n--------------\n");
+        printf("\n__________________________________________________________________________________________________________________________________________________\n");
+        printf("\n\n");
         goto label1;
     }
     else if (select == 4)
@@ -130,13 +134,14 @@ int main()
         char answer[size + 1];
 
         binaryTohexadecimal(num4, decimal, temp, size, answer);
-        printf("--------------\n");
+        printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
         printf("[%d] to Hexadecimal is = ", num4);
         for (int i = size - 1; i >= 0; i--)
         {
             printf("%c", answer[i]);
         }
-        printf("\n--------------\n");
+        printf("\n__________________________________________________________________________________________________________________________________________________\n");
+        printf("\n\n");
 
         goto label1;
     }
@@ -149,10 +154,11 @@ int main()
 
         int temp = num5;
         ans4 = octalTodecimal(num5);
-        printf("--------------\n");
+        printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
         printf("[%d] to decimal is = %d", temp, ans4);
-        printf("\n--------------\n");
+        printf("\n__________________________________________________________________________________________________________________________________________________\n");
 
+        printf("\n\n");
         goto label1;
     }
     else if (select == 6)
@@ -372,11 +378,12 @@ void hexadecimalTodecimal(char hexadecimal[100], int size, int hexadecimal_orig[
         orignal_num6 = orignal_num6 / 2;
     }
 
-    printf("--------------\n");
+    printf("__________________________________________________________________________________________________________________________________________________\n\n\t\t\t\t\t\t\t");
     printf("[%s] to Hexadecimal is = ", toprint);
     for (int i = 0; i < size_of_binary; i++)
     {
         printf("%d", binary[i]);
     }
-    printf("\n--------------\n");
+    printf("\n__________________________________________________________________________________________________________________________________________________\n");
+    printf("\n\n");
 }
